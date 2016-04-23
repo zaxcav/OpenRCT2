@@ -28,6 +28,7 @@
 #include "localisation/localisation.h"
 #include "network/http.h"
 #include "network/network.h"
+#include "object_list.h"
 #include "openrct2.h"
 #include "platform/crash.h"
 #include "platform/platform.h"
@@ -218,6 +219,9 @@ bool openrct2_initialise()
 		audio_init();
 		audio_populate_devices();
 	}
+
+	object_list_init();
+
 	if (!language_open(gConfigGeneral.language)) {
 		log_error("Failed to open configured language...");
 
