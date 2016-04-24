@@ -35,7 +35,7 @@
  */
 void track_paint(uint8 direction, int height, rct_map_element *mapElement)
 {
-	rct_drawpixelinfo *dpi = RCT2_GLOBAL(0x0140E9A8, rct_drawpixelinfo*);
+	rct_drawpixelinfo *dpi = unk_140E9A8;
 	rct_ride *ride;
 	int rideIndex, trackType, trackColourScheme, trackSequence;
 

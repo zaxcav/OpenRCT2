@@ -147,7 +147,7 @@ bool sub_98197C(
 	RCT2_GLOBAL(0xF1AD1C, uint16) = left;
 	RCT2_GLOBAL(0xF1AD1E, uint16) = bottom;
 
-	rct_drawpixelinfo* dpi = RCT2_GLOBAL(0x140E9A8, rct_drawpixelinfo*);
+	rct_drawpixelinfo* dpi = unk_140E9A8;
 
 	if (right <= dpi->x)return false;
 	if (top <= dpi->y)return false;
@@ -459,7 +459,7 @@ void sub_685EBC(money32 amount, uint16 string_id, sint16 y, sint16 z, sint8 y_of
  */
 void viewport_paint_setup()
 {
-	rct_drawpixelinfo* dpi = RCT2_GLOBAL(0x140E9A8, rct_drawpixelinfo*);
+	rct_drawpixelinfo* dpi = unk_140E9A8;
 
 	rct_xy16 mapTile = {
 		.x = dpi->x & 0xFFE0,
@@ -746,7 +746,7 @@ void paint_attached_ps(paint_struct* ps, attached_paint_struct* attached_ps, rct
 
 /* rct2: 0x00688485 */
 void paint_quadrant_ps() {
-	rct_drawpixelinfo* dpi = RCT2_GLOBAL(0x140E9A8, rct_drawpixelinfo*);
+	rct_drawpixelinfo* dpi = unk_140E9A8;
 	paint_struct* ps = RCT2_GLOBAL(0xEE7884, paint_struct*);
 	paint_struct* previous_ps = ps->next_quadrant_ps;
 
@@ -828,7 +828,7 @@ void viewport_draw_money_effects()
 	if (ps == NULL)
 		return;
 
-	rct_drawpixelinfo dpi = *(RCT2_GLOBAL(0x0140E9A8, rct_drawpixelinfo*));
+	rct_drawpixelinfo dpi = *(unk_140E9A8);
 	draw_pixel_info_crop_by_zoom(&dpi);
 
 	do {

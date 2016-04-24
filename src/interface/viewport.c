@@ -782,7 +782,7 @@ void viewport_paint(rct_viewport* viewport, rct_drawpixelinfo* dpi, int left, in
 			gfx_clear(dpi2, colour);
 		}
 		RCT2_GLOBAL(0xEE7880, uint32) = 0xF1A4CC;
-		RCT2_GLOBAL(0x140E9A8, uint32) = (int)dpi2;
+		unk_140E9A8 = dpi2;
 		int ebp = 0, ebx = 0, esi = 0, ecx = 0;
 		painter_setup();
 		viewport_paint_setup();
@@ -1370,7 +1370,7 @@ void sub_679023(rct_drawpixelinfo *dpi, int imageId, int x, int y)
  */
 void sub_68862C()
 {
-	rct_drawpixelinfo *dpi = RCT2_GLOBAL(0x0140E9A8, rct_drawpixelinfo*);
+	rct_drawpixelinfo *dpi = unk_140E9A8;
 	paint_struct *ps = RCT2_GLOBAL(0x00EE7884, paint_struct*), *old_ps, *next_ps;
 	attached_paint_struct* attached_ps;
 
@@ -1442,7 +1442,7 @@ void get_map_coordinates_from_pos(int screenX, int screenY, int flags, sint16 *x
 			dpi->x = RCT2_GLOBAL(RCT2_ADDRESS_VIEWPORT_PAINT_X, int16_t);
 			dpi->width = 1;
 			RCT2_GLOBAL(0xEE7880, uint32_t) = 0xF1A4CC;
-			RCT2_GLOBAL(0x140E9A8, rct_drawpixelinfo*) = dpi;
+			unk_140E9A8 = dpi;
 			painter_setup();
 			viewport_paint_setup();
 			sub_688217();

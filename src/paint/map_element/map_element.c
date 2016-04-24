@@ -42,7 +42,7 @@ static void sub_68B3FB(int x, int y);
  */
 void map_element_paint_setup(int x, int y)
 {
-	rct_drawpixelinfo *dpi = RCT2_GLOBAL(0x0140E9A8, rct_drawpixelinfo*);
+	rct_drawpixelinfo *dpi = unk_140E9A8;
 	if (
 		x < gMapSizeUnits &&
 		y < gMapSizeUnits &&
@@ -106,7 +106,7 @@ void sub_68B2B7(int x, int y)
  */
 static void blank_tiles_paint(int x, int y)
 {
-	rct_drawpixelinfo *dpi = RCT2_GLOBAL(0x0140E9A8, rct_drawpixelinfo*);
+	rct_drawpixelinfo *dpi = unk_140E9A8;
 
 	int dx;
 	switch (get_current_rotation()) {
@@ -155,7 +155,7 @@ static void blank_tiles_paint(int x, int y)
  */
 static void sub_68B3FB(int x, int y)
 {
-	rct_drawpixelinfo *dpi = RCT2_GLOBAL(0x0140E9A8, rct_drawpixelinfo*);
+	rct_drawpixelinfo *dpi = unk_140E9A8;
 
 	RCT2_GLOBAL(0x141F56A, uint16_t) = 0;
 	RCT2_GLOBAL(0x9E3138, uint8_t) = 0xFF;
