@@ -733,8 +733,7 @@ void reload_map_backup(rct_map_element **backup)
 	uint32* map_elements = RCT2_ADDRESS(RCT2_ADDRESS_MAP_ELEMENTS, uint32);
 	memcpy(map_elements, RCT2_GLOBAL(0xF440ED, uint32*), 0xED600);
 
-	uint32* tile_map_pointers = RCT2_ADDRESS(RCT2_ADDRESS_TILE_MAP_ELEMENT_POINTERS, uint32);
-	memcpy(tile_map_pointers, backup, sizeof(rct_map_element**) * MAX_TILE_MAP_ELEMENT_POINTERS);
+	memcpy(gMapElementTilePointers, backup, sizeof(rct_map_element**) * MAX_TILE_MAP_ELEMENT_POINTERS);
 
 	uint8* backup_info = RCT2_GLOBAL(0xF440F5, uint8*);
 	gNextFreeMapElement = (rct_map_element*)backup_info;
