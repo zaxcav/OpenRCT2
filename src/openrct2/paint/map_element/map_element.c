@@ -163,6 +163,13 @@ static void sub_68B3FB(int x, int y)
 	rct_map_element* map_element = map_get_first_element_at(x >> 5, y >> 5);
 	uint8 rotation = get_current_rotation();
 
+	/* zax: Check if the first (lowest) map_element is below the clip
+	 * height. */
+	if ((gCurrentViewportFlags & VIEWPORT_FLAG_PAINT_CLIP_TO_HEIGHT) && (map_element->base_height > gClipHeight)) {
+		blank_tiles_paint(x, y);
+		return;
+	}
+
 	int dx = 0;
 	switch (rotation) {
 	case 0:
@@ -236,7 +243,11 @@ static void sub_68B3FB(int x, int y)
 	gUnk9DE56C = y;
 	gDidPassSurface = false;
 	do {
+		// zax: Only paint map_elements below the clip height.
+		if ((gCurrentViewportFlags & VIEWPORT_FLAG_PAINT_CLIP_TO_HEIGHT) && (map_element->base_height > gClipHeight)) break;
+
 		int direction = (map_element->type + rotation) & MAP_ELEMENT_DIRECTION_MASK;
+
 		int height = map_element->base_height * 8;
 
 		rct_xy16 dword_9DE574 = gPaintMapPosition;
@@ -304,6 +315,9 @@ static void sub_68B3FB(int x, int y)
 				// white: 0b101101
 				imageColourFlats = 0b111011 << 19 | 0x40000000;
 			}
+
+			// zax: Only draw supports above the clipping height.
+			if ((gCurrentViewportFlags & VIEWPORT_FLAG_PAINT_CLIP_TO_HEIGHT) && (segmentHeight > gClipHeight)) continue;
 
 			int xOffset = y * 10;
 			int yOffset = -22 + x * 10;
