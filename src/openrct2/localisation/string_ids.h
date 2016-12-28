@@ -3646,6 +3646,11 @@ enum {
 
 	STR_BOOSTER = 5995,
 	STR_RIDE_CONSTRUCTION_BOOSTER_SPEED = 5996,
+	STR_VIEW_CLIPPING = 5997,
+	STR_VIEW_CLIPPING_HEIGHT_ENABLE = 5998,
+	STR_VIEW_CLIPPING_HEIGHT_ENABLE_TIP = 5999,
+	STR_VIEW_CLIPPING_HEIGHT_VALUE = 5600,
+	STR_VIEW_CLIPPING_HEIGHT_SCROLL_TIP = 5601,
 
 	// Have to include resource strings (from scenarios and objects) for the time being now that language is partially working
 	STR_COUNT = 32768

@@ -4305,6 +4305,11 @@ STR_5993    :{SMALLFONT}{BLACK}Copy selected element
 STR_5994    :{SMALLFONT}{BLACK}Paste copied element
 STR_5995    :Booster
 STR_5996    :Booster speed
+STR_5997    :View Clipping
+STR_5998    :Enable clipping by height
+STR_5999    :Height clipping only displays map elements below the clip height
+STR_5600    :Clip height
+STR_5601    :Select clip height
 
 #############
 # Scenarios #
