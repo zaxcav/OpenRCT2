@@ -3651,6 +3651,7 @@ enum {
 	STR_VIEW_CLIPPING_HEIGHT_ENABLE_TIP = 5999,
 	STR_VIEW_CLIPPING_HEIGHT_VALUE = 5600,
 	STR_VIEW_CLIPPING_HEIGHT_SCROLL_TIP = 5601,
+	STR_UNIT1DP_SUFFIX_METRES = 5602,
 
 	// Have to include resource strings (from scenarios and objects) for the time being now that language is partially working
 	STR_COUNT = 32768

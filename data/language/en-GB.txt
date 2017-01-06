@@ -4310,6 +4310,7 @@ STR_5998    :Enable cut-away view
 STR_5999    :Cut-away view only displays map elements at or below the cut height
 STR_5600    :Cut height
 STR_5601    :Select cut height
+STR_5602    :{COMMA1DP16}m
 
 #############
 # Scenarios #
